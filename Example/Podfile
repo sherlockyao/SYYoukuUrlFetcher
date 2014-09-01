@@ -1,0 +1,9 @@
+target 'SYYoukuUrlFetcher', :exclusive => true do
+  pod "SYYoukuUrlFetcher", :path => "../"
+end
+
+target 'Tests', :exclusive => true do
+  pod "SYYoukuUrlFetcher", :path => "../"
+
+  pod 'Kiwi'
+end
