@@ -1,0 +1,17 @@
+PODS:
+  - Kiwi (2.3.0)
+  - SYYoukuUrlFetcher (0.1.0)
+
+DEPENDENCIES:
+  - Kiwi
+  - SYYoukuUrlFetcher (from `../`)
+
+EXTERNAL SOURCES:
+  SYYoukuUrlFetcher:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Kiwi: 54bece5b35564d9b8e03c608d926f1a22fcfc589
+  SYYoukuUrlFetcher: 87e82f48f298a05d8a3c34ebbcb6adf01a0026c5
+
+COCOAPODS: 0.33.1
