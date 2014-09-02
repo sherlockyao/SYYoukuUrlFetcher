@@ -28,6 +28,7 @@
   NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://v.youku.com/player/getPlayList/VideoIDS/XNTU0NDIzNjM2"]];
   AFHTTPRequestOperation *requestOp = [[AFHTTPRequestOperation alloc] initWithRequest:request];
   requestOp.responseSerializer = [AFJSONResponseSerializer serializer];
+  requestOp.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
   [requestOp setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
     [self finishRequestWithData:responseObject];
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -62,7 +63,7 @@
 
 - (NSString *)getFileId:(NSString *)fileId seed:(NSInteger)seed {
   NSString *mixed = [self getFileIdMixString:seed];
-  NSArray *ids = [fileId componentsSeparatedByString:@"\\*"];
+  NSArray *ids = [fileId componentsSeparatedByString:@"*"];
   NSMutableString *result = [NSMutableString string];
   for (int i = 0; i < [ids count]; i++) {
     NSInteger index = [ids[i] integerValue];
