@@ -1,5 +1,6 @@
 target 'SYYoukuUrlFetcher', :exclusive => true do
   pod "SYYoukuUrlFetcher", :path => "../"
+  pod 'AFNetworking', '~> 2.3'
 end
 
 target 'Tests', :exclusive => true do
